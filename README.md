@@ -1,1 +1,2 @@
-# terioo.github.io
+# Image binarization
+
