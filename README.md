@@ -8,4 +8,4 @@ To circumvent this I tried using some photo editing apps on which the best solut
 
 Being unsatisfied with what I found online I decided to fix it myself having prior knowledge of this image processing method. Anyway if you're having the same issue with printing as I was, feel free to try this method and see the results, I was quite happy with it.
 
-Page link: [terioo.github.io/Image-binarization/](terioo.github.io/Image-binarization/)
+Page link: [https://terioo.github.io/Image-binarization/](https://terioo.github.io/Image-binarization/)
