@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+input {
+  font-size: inherit;
+  font-family: inherit;
+}
+
+.canvas-wrapper {
+  display: flex;
+}
+input#menu-open {
+  display: none;
+}
+
+input#menu-open:checked ~ .menu {
+  transform: translate(100%, -50%);
+}
+input#menu-open:checked ~ .menu label.menu-open img {
+  transform: rotate(270deg);
+}
+
+.menu {
+  position: fixed;
+  right: 0;
+  top: 50vh;
+  transform: translate(0, -50%);
+  font-size: 1.8vh;
+  padding: 1vh;
+  border: 1px solid blue;
+  border-right: 0;
+  background-color: white;
+  transition: transform 0.5s;
+  display: flex;
+  flex-direction: column;
+}
+.menu::before {
+  content: "";
+  width: 0.5vh;
+  height: 4vh;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(-50%, -50%);
+  background-color: white;
+}
+.menu label.menu-open {
+  box-sizing: content-box;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  background-color: white;
+  border: 1px solid blue;
+  border-right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom-left-radius: 0.5vh;
+  border-top-left-radius: 0.5vh;
+}
+.menu label.menu-open:hover {
+  cursor: pointer;
+}
+.menu label.menu-open img {
+  width: 4vh;
+  transform: rotate(90deg);
+  transition: transform 0.5s;
+}
+.menu .buttons {
+  display: flex;
+  flex-direction: column;
+}
+.menu .buttons .set-threshold {
+  width: fit-content;
+}
+.menu .buttons .fit {
+  background-color: rgb(15, 201, 15);
+  margin: 0.5vh 0;
+  text-align: center;
+  cursor: default;
+  width: 90%;
+  align-self: center;
+  padding: 0.5vh;
+  border-radius: 4px;
+}
+.menu .buttons .fit:hover {
+  background-color: rgb(52, 250, 52);
+}
+
+section.section {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+section.section > h1 {
+  text-align: center;
+}
+section.section .applications .img-comparison {
+  display: flex;
+}
+section.section .applications .img-comparison img {
+  width: 50%;
+}
+
+/*# sourceMappingURL=binarization.css.map */

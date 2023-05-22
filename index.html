@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="binarization.css">
+</head>
+<body>
+    <div class="canvas-wrapper">
+        <canvas id="myCanvas">
+            Image didn't load :(
+        </canvas>
+    </div>
+    <input id="menu-open" type="checkbox"/>
+    <div class="menu">
+        <label class="menu-open" for="menu-open">
+            <img src="./assets/arrow.svg" alt="menu">
+        </label>
+        <div class="buttons">
+            <input type="file" accept="image/*" class="input-image">
+            <p> 
+                Threshold [0, 255]:
+                <input type="number" min="0" max="255" class="set-threshold">
+            </p>
+            <a id="download-image" href="#">Download the image</a>
+            <p class="fit height">Resize to fit height</p>
+            <p class="fit width">Resize to fit width</p>
+            <p class="fit initial">Return to initial image size</p>
+        </div>
+    </div>
+    <section class="section">
+        <h1>Image binarization</h1>
+        <p>Hello! I made this app to convert images into black and white levels, if you're curious about why and what uses this image processing method has, well I will try my best to explain these points:</p>
+        <ol>
+            <li>What is image binarization?</li>
+            <li>Why did I make this app? (It's applications)</li>
+            <li>How to use it and possible questions</li>
+        </ol>
+        <div class="description">
+            <h2>What is image binarization?</h2>
+            <p>Image binarization is an image processing method in which a color or grayscale image is taken and is converted into an image containing only 2 colors: black and white</p>
+            <h3>How does it work?</h3> 
+            <p>
+                Digital images are composed of pixels, which are tiny squares on the screen, each one consisting of three color components: red, green, blue (RGB). By combining these 3 color channels, a multitude
+                of different colors can be represented, you can play with the input bellow to see some examples:
+            </p>
+            <p>Also you can use the syringe to see the pixels and the color they display on the screen, you can also use it on the binarized image for comparison!</p>
+            <input type="color">
+            <h3>How to obtain a binary image from a color?</h3>
+            <p>The first step would be to obtain a grayscale image from the original color one.</p>
+            <p>
+                To achieve this, all the pixels from the image must be extracted and obtain their RGB value. 
+                Having the values for a pixel, one conversion method would be to take the average of the 3 color channels:</p>
+            <p>E.g: A shade of blue given by: RGB(23, 63, 222) becomes (R+G+B)/3 = (23 + 63 + 222)/3 ==> RGB(102, 102, 102), the gray equivalent</p>
+            <p>By passing through each pixel you can convert an entire color image into a gray one.</p>
+            <p>
+                Having obtained a grayscale image, a threshold value is set between 0 (BLACK) and 255 (WHTIE) and each gray pixel's value is checked against this threshold. 
+                <ul>
+                    <li>If that value is bigger than the threshold --> make it 255</li>
+                    <li>If that value is less than the threshold --> make it 0</li>
+                </ul>
+                This way the final image will contain pixels with 2 possible values: RGB(0, 0, 0) - BLACK; RGB(255, 255, 255) - WHITE
+            </p>
+        </div>
+        <div class="applications">
+            <h2>Why did I make this app and some possible applications</h2>
+            <p>The main reason I made this app was because of my printer. To better understand the problem I was facing, here are some images:</p>
+            <div class="img-comparison">
+                <img src="./assets/Sample1.jpg" alt=""/>
+                <img src="./assets/Result2.jpg" alt=""/>
+            </div>
+            <p>
+                The left image is a photo I took of a book page with my phone, and the second image is the printed result. 
+                My printer prints only gray images, so it will see the background from the page and try to print that with some shade of gray, wasting ink and making the result unreadable.
+            </p>
+            <p>Now I knew about this image processing method and how to extract all the pixels's RGB values from and image, so obtaining a binary image shouldn't be that difficult, and so I made this app and here is a result:</p>
+            <div class="img-comparison">
+                <img src="./assets/Image (12).png" alt=""/>
+                <img src="./assets/Result1.jpg" alt=""/>
+            </div>
+            <p>The left image is the binary representation of the book page and the right one is the printed result, which I say looks alot better than the first one.</p>
+            <p>This image processing method is really usefull in these cases, where you need to print a photo of a document, page or some text with a non-white background.</p>
+        </div>
+        <div class="how-to-use">
+            <h2>How to use the app</h2>
+            <p></p>
+        </div>
+    </section>
+    <script src="binarization.js"></script>
+</body>
+</html>
