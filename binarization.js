@@ -33,8 +33,6 @@ const input_image = document.querySelector('.input-image');
 input_image.addEventListener('change', () => {
     const file = input_image.files[0];
     if(file) IMG.src = URL.createObjectURL(file);
-    console.log(file);
-
 })
 
 
