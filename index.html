@@ -24,36 +24,49 @@
                 Threshold [0, 255]:
                 <input type="number" min="0" max="255" class="set-threshold">
             </p>
-            <a id="download-image" href="#">Download the image</a>
-            <p class="fit height">Resize to fit height</p>
-            <p class="fit width">Resize to fit width</p>
+            <a id="download-image" href="#" class="download-wrapper">
+                <img src="./assets/download.svg" alt="download">
+                <p>Download the image</p> 
+            </a>
+            <div class="flex-wrapper">
+                <p class="fit height">Resize to fit height</p>
+                <p class="fit width">Resize to fit width</p>
+            </div>
             <p class="fit initial">Return to initial image size</p>
+            <a href="#title" class="to-title">Description</a>
         </div>
     </div>
     <section class="section">
-        <h1>Image binarization</h1>
-        <p>Hello! I made this app to convert images into black and white levels, if you're curious about why and what uses this image processing method has, well I will try my best to explain these points:</p>
+        <h1 id="title">Image binarization</h1>
+        <p>
+            Hello! I made this app to convert images into black and white levels, if you're curious about why and what uses this image processing method has, well I will try my best to explain these points:
+        </p>
         <ol>
-            <li>What is image binarization?</li>
-            <li>Why did I make this app? (It's applications)</li>
-            <li>How to use it and possible questions</li>
+            <a href="#1"><li>What is image binarization?</li></a> 
+            <a href="#2"><li>Why did I make this app? (Its applications)</li></a> 
+            <a href="#3"><li>How to use it and possible questions</li></a> 
         </ol>
         <div class="description">
-            <h2>What is image binarization?</h2>
-            <p>Image binarization is an image processing method in which a color or grayscale image is taken and is converted into an image containing only 2 colors: black and white</p>
+            <h2 id="1">1. What is image binarization?</h2>
+            <p>
+                Image binarization is an image processing method in which a color or grayscale image is taken and is converted into a black and white image.
+            </p>
             <h3>How does it work?</h3> 
             <p>
                 Digital images are composed of pixels, which are tiny squares on the screen, each one consisting of three color components: red, green, blue (RGB). By combining these 3 color channels, a multitude
                 of different colors can be represented, you can play with the input bellow to see some examples:
             </p>
-            <p>Also you can use the syringe to see the pixels and the color they display on the screen, you can also use it on the binarized image for comparison!</p>
+            <p>
+                Also you can use the syringe to see the pixels and the color they display on the screen, you can also use it on the binarized image for comparison!
+            </p>
             <input type="color">
             <h3>How to obtain a binary image from a color?</h3>
             <p>The first step would be to obtain a grayscale image from the original color one.</p>
             <p>
                 To achieve this, all the pixels from the image must be extracted and obtain their RGB value. 
-                Having the values for a pixel, one conversion method would be to take the average of the 3 color channels:</p>
-            <p>E.g: A shade of blue given by: RGB(23, 63, 222) becomes (R+G+B)/3 = (23 + 63 + 222)/3 ==> RGB(102, 102, 102), the gray equivalent</p>
+                Having the values for a pixel, one conversion method would be to take the average of the 3 color channels:
+            </p>
+            <p>E.g: A shade of blue given by: <span style="color: rgb(23, 63, 222)"><b>RGB(23, 63, 222)</b></span>  becomes (R+G+B)/3 = (23 + 63 + 222)/3 ==> <span style="color: rgb(102, 102, 102)"><b> RGB(102, 102, 102)</b></span>, the gray equivalent</p>
             <p>By passing through each pixel you can convert an entire color image into a gray one.</p>
             <p>
                 Having obtained a grayscale image, a threshold value is set between 0 (BLACK) and 255 (WHTIE) and each gray pixel's value is checked against this threshold. 
@@ -65,14 +78,14 @@
             </p>
         </div>
         <div class="applications">
-            <h2>Why did I make this app and some possible applications</h2>
+            <h2 id="2">2. Why did I make this app and some possible applications</h2>
             <p>The main reason I made this app was because of my printer. To better understand the problem I was facing, here are some images:</p>
             <div class="img-comparison">
                 <img src="./assets/Sample1.jpg" alt=""/>
                 <img src="./assets/Result2.jpg" alt=""/>
             </div>
             <p>
-                The left image is a photo I took of a book page with my phone, and the second image is the printed result. 
+                The left image is a photo I took of a book page with my phone, and the second one is the printed page. 
                 My printer prints only gray images, so it will see the background from the page and try to print that with some shade of gray, wasting ink and making the result unreadable.
             </p>
             <p>Now I knew about this image processing method and how to extract all the pixels's RGB values from and image, so obtaining a binary image shouldn't be that difficult, and so I made this app and here is a result:</p>
@@ -80,12 +93,38 @@
                 <img src="./assets/Image (12).png" alt=""/>
                 <img src="./assets/Result1.jpg" alt=""/>
             </div>
-            <p>The left image is the binary representation of the book page and the right one is the printed result, which I say looks alot better than the first one.</p>
-            <p>This image processing method is really usefull in these cases, where you need to print a photo of a document, page or some text with a non-white background.</p>
+            <p>
+                The left image is the binary representation of the book page and the right one is the printed result, which I say looks alot better.
+                This image processing method is really usefull in these cases, where you need to print a photo of a document, page or some text with a non-white background.
+            </p>
+            <p>The main use case for this image processing method that I knew of was in medical imaging, where it will help in identifying foreign objects present in medical images.</p>
         </div>
         <div class="how-to-use">
-            <h2>How to use the app</h2>
-            <p></p>
+            <h2 id="3">3. How to use the app</h2>
+            <p>Use the menu on the right to upload an image, change the THRESHOLD value from between 0 and 255 using either the arrows, or by entering a value from keyboard then pressing ENTER (the input uses a 'change' event)</p>
+            <p>After the image is done you can download the image.</p>
+            <h3>Possible questions:</h3>
+            <ul>
+                <li>Why didn't I resize bigger images to fit the screen?</li>
+                <p>
+                    If an image with a bigger size than the screen is introduced, doing any resizing to fit it to the height or width will result in an image with reduced quality and if that image contains text, 
+                    the binary result will be unreadable, that's why I don't resize the image and don't recommend doing it (even though I added these 2 functions). Maybe there is a way to downsize image without losing 
+                    on quality but I don't know how to do it in this context so this shall suffice.
+                </p>
+                <p>
+                    You can zoom out of the page (<b>Ctrl and Mousewheel</b>  or <b> Ctrl and +/- </b>) if you need to see the result or simply download the image and view it in your local machine.
+                </p>
+                <li>Inputs freezes when cliking on resizing or changing threshold</li>
+                <p>
+                    The binarization process should be really fast for smaller images, but for big images (E.g: 2560x3400) the process will take a few seconds because it needs to loop through all those pixels once. 
+                    So the bigger the image, the more time it will take to process it so the program will 'freeze' in this time and interacting with the other buttons might be clunky.
+                </p>
+                <li>Responsive design and using this on mobile</li>
+                <p>
+                    I tried to make it responsive, but position: fixed doesn't seem to behave well on mobile and there is also the problem with resizing the image, because on mobile it would be an even bigger issue,
+                    so I won't be working on this issue and I recommend using this page only on PC.
+                </p>
+            </ul>
         </div>
     </section>
     <script src="binarization.js"></script>

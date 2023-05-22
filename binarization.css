@@ -8,6 +8,10 @@ html {
   padding: 0;
 }
 
+html {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
 input {
   font-size: inherit;
   font-family: inherit;
@@ -34,7 +38,7 @@ input#menu-open:checked ~ .menu label.menu-open img {
   transform: translate(0, -50%);
   font-size: 1.8vh;
   padding: 1vh;
-  border: 1px solid blue;
+  border: 1px solid rgb(7, 11, 255);
   border-right: 0;
   background-color: white;
   transition: transform 0.5s;
@@ -58,7 +62,7 @@ input#menu-open:checked ~ .menu label.menu-open img {
   top: 50%;
   transform: translate(-100%, -50%);
   background-color: white;
-  border: 1px solid blue;
+  border: 1px solid rgb(7, 11, 255);
   border-right: 0;
   display: flex;
   justify-content: center;
@@ -81,32 +85,77 @@ input#menu-open:checked ~ .menu label.menu-open img {
 .menu .buttons .set-threshold {
   width: fit-content;
 }
-.menu .buttons .fit {
-  background-color: rgb(15, 201, 15);
-  margin: 0.5vh 0;
+.menu .buttons .to-title {
+  text-decoration: none;
+  color: rgb(7, 11, 255);
+  font-weight: bold;
   text-align: center;
-  cursor: default;
-  width: 90%;
+  margin: 1vh 0;
+}
+.menu .buttons .to-title:hover {
+  text-decoration: underline;
+}
+.menu .buttons .download-wrapper {
+  display: flex;
+  align-self: center;
+  width: fit-content;
+  padding: 0 0.5vh;
+}
+.menu .buttons .download-wrapper img {
+  width: 3vh;
+  margin-right: 0.5vh;
+}
+.menu .buttons .download-wrapper p {
+  margin: 0.5vh;
+}
+.menu .buttons .download-wrapper:hover {
+  box-shadow: 3px 0px 0px -1px rgb(7, 11, 255), -3px 0px 0px -1px rgb(7, 11, 255);
+}
+.menu .buttons .flex-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.menu .buttons .fit {
+  margin: 0.75vh 0;
+  text-align: center;
+  cursor: pointer;
+  width: fit-content;
   align-self: center;
   padding: 0.5vh;
   border-radius: 4px;
+  box-shadow: 0px 2px 0px -1px rgb(7, 11, 255);
 }
 .menu .buttons .fit:hover {
-  background-color: rgb(52, 250, 52);
+  box-shadow: 0px 3px 0px -1px rgb(7, 11, 255);
 }
 
 section.section {
   max-width: 60rem;
-  margin: 0 auto;
+  margin: 4rem auto;
+  padding: 0 1rem;
 }
 section.section > h1 {
   text-align: center;
+}
+section.section ol a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+}
+section.section ol a:hover {
+  text-decoration: underline;
+}
+section.section ol li {
+  margin: 0.5rem 0;
 }
 section.section .applications .img-comparison {
   display: flex;
 }
 section.section .applications .img-comparison img {
   width: 50%;
+}
+section.section .how-to-use ul li {
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=binarization.css.map */
