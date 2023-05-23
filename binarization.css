@@ -22,7 +22,7 @@ input {
 }
 @media (max-width: 968px) {
   .canvas-wrapper {
-    overflow-x: hidden;
+    overflow-x: scroll;
   }
 }
 

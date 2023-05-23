@@ -23,7 +23,7 @@ input {
     display: flex;
 
     @media (max-width: $touch_device) {
-        overflow-x: hidden;
+        overflow-x: scroll;
     }
 
 }
