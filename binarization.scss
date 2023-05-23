@@ -1,3 +1,5 @@
+$touch_device: 968px;
+
 * {
     box-sizing: border-box;
 }
@@ -20,7 +22,10 @@ input {
 .canvas-wrapper {
     display: flex;
 
-    canvas {}
+    @media (max-width: $touch_device) {
+        overflow-x: hidden;
+    }
+
 }
 
 input#menu-open {
@@ -104,7 +109,9 @@ input#menu-open:checked~.menu {
             margin: 1vh 0;
 
             &:hover {
-                text-decoration: underline;
+                @media (min-width: $touch_device) {
+                    text-decoration: underline;
+                }
             }
         }
 
@@ -124,7 +131,9 @@ input#menu-open:checked~.menu {
             }
 
             &:hover {
-                box-shadow: 3px 0px 0px -1px $border-color, -3px 0px 0px -1px $border-color;
+                @media (min-width: $touch_device) {
+                    box-shadow: 3px 0px 0px -1px $border-color, -3px 0px 0px -1px $border-color;
+                }
             }
         }
 
@@ -144,7 +153,9 @@ input#menu-open:checked~.menu {
             box-shadow: 0px 2px 0px -1px $border-color;
 
             &:hover {
-                box-shadow: 0px 3px 0px -1px $border-color;
+                @media (min-width: $touch_device) {
+                    box-shadow: 0px 3px 0px -1px $border-color;
+                }
             }
         }
     }
@@ -166,7 +177,9 @@ section.section {
             font-weight: bold;
 
             &:hover {
-                text-decoration: underline;
+                @media (min-width: $touch_device) {
+                    text-decoration: underline;
+                }
             }
         }
 

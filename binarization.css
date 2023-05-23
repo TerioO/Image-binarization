@@ -20,6 +20,12 @@ input {
 .canvas-wrapper {
   display: flex;
 }
+@media (max-width: 968px) {
+  .canvas-wrapper {
+    overflow-x: hidden;
+  }
+}
+
 input#menu-open {
   display: none;
 }
@@ -92,8 +98,10 @@ input#menu-open:checked ~ .menu label.menu-open img {
   text-align: center;
   margin: 1vh 0;
 }
-.menu .buttons .to-title:hover {
-  text-decoration: underline;
+@media (min-width: 968px) {
+  .menu .buttons .to-title:hover {
+    text-decoration: underline;
+  }
 }
 .menu .buttons .download-wrapper {
   display: flex;
@@ -108,8 +116,10 @@ input#menu-open:checked ~ .menu label.menu-open img {
 .menu .buttons .download-wrapper p {
   margin: 0.5vh;
 }
-.menu .buttons .download-wrapper:hover {
-  box-shadow: 3px 0px 0px -1px rgb(7, 11, 255), -3px 0px 0px -1px rgb(7, 11, 255);
+@media (min-width: 968px) {
+  .menu .buttons .download-wrapper:hover {
+    box-shadow: 3px 0px 0px -1px rgb(7, 11, 255), -3px 0px 0px -1px rgb(7, 11, 255);
+  }
 }
 .menu .buttons .flex-wrapper {
   display: flex;
@@ -125,8 +135,10 @@ input#menu-open:checked ~ .menu label.menu-open img {
   border-radius: 4px;
   box-shadow: 0px 2px 0px -1px rgb(7, 11, 255);
 }
-.menu .buttons .fit:hover {
-  box-shadow: 0px 3px 0px -1px rgb(7, 11, 255);
+@media (min-width: 968px) {
+  .menu .buttons .fit:hover {
+    box-shadow: 0px 3px 0px -1px rgb(7, 11, 255);
+  }
 }
 
 section.section {
@@ -142,8 +154,10 @@ section.section ol a {
   color: inherit;
   font-weight: bold;
 }
-section.section ol a:hover {
-  text-decoration: underline;
+@media (min-width: 968px) {
+  section.section ol a:hover {
+    text-decoration: underline;
+  }
 }
 section.section ol li {
   margin: 0.5rem 0;

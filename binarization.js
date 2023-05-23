@@ -5,7 +5,7 @@ const THRESHOLD = document.querySelector(".set-threshold");
 THRESHOLD.value = 100;
 
 const IMG = new Image();
-IMG.src = "";
+IMG.src = "./assets/Before-After.png";
 
 const download_button = document.querySelector("#download-image");
 // The name of the downloaded file:
